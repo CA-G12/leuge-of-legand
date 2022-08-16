@@ -8,9 +8,17 @@ const home = (req,res) => {
 
 const getData = async(req,res)=>{
 
-    const response = await fetch(`https://ddragon.leagueoflegends.com/cdn/12.5.1/data/en_US/champion/Lux.json`)
+try{
+    const response = await fetch(`https://ddragon.legagueoflegends.com/cdn/12.5.1/data/en_US/champion/${req.body.name}.json`)
     const body = await response.json();
-    res.json(body)
+        res.json(body)
+}catch(err){
+console.log(err);
+}
+    
+  
+    
+
     }
 
 module.exports = {home, getData}

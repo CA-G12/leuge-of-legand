@@ -16,4 +16,11 @@ app.use(
 
 app.use(router)
 
+app.use((req,res)=>{
+  res.send('404')
+})
+app.use((err,req,res,next)=>{
+  res.send('500')
+})
+
 module.exports = app;
