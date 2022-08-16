@@ -1,4 +1,4 @@
-const home = require('./home');
+const {home,getData} = require('./home');
 
 
-module.exports = {home}
+module.exports = {home,getData}
