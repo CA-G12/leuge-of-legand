@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400&family=Roboto+Slab:wght@600;700;800;900&family=Syne+Mono&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arvo', serif;
+}
+
+:root {
+  --background-color: #030910;
+}
+
+.landing {
+  background-color: var(--background-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.welcome {
+  font-family: 'Arvo', serif;
+  font-family: 'Roboto Slab', serif;
+  font-style: normal;
+  font-weight: 900;
+  color: rgb(103, 71, 31);
+  font-size: 58px;
+  line-height: 63px;
+  text-align: center;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #ffb504 0%, #caba93 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+
+/*! slider style  */
