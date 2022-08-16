@@ -1,9 +1,10 @@
-const {home,getData} = require('./controllers');
-
+const {home,getData, data} = require('./controllers');
 const router = require('express').Router();
 
+
+router.post('/search',getData)
 router.get('/home', home)
-router.post('/home',getData
-)
+router.get('/data',data)
+
 
 module.exports = router;
