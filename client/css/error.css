@@ -1,0 +1,18 @@
+body {
+  background-image: url(../img/error.png);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error__desc {
+  font-size: 30px;
+  display: block;
+  color: azure;
+  background: #000;
+  padding: 10px;
+  border-radius: 12px;
+}
