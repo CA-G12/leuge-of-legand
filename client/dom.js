@@ -1,6 +1,8 @@
 const btn = document.querySelector('.search');
 const searchInput = document.querySelector('.search-input');
 const boxItems = document.querySelector('.box-items');
+const skins = document.querySelector('.skins');
+
 fetch('/data')
   .then((res) => res.json())
   .then((data) => {
@@ -11,6 +13,7 @@ fetch('/data')
     console.error('Error:', error);
   });
 
+//----------------------------------------------
 btn.addEventListener('click', (e) => {
   e.preventDefault();
   fetch('/search', {
@@ -30,10 +33,27 @@ btn.addEventListener('click', (e) => {
     });
 });
 
+function createSkins(data, name) {
+  data.forEach((e) => {
+    const skin = document.createElement('img');
+    skins.appendChild(skin);
+    skin.src = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${name}_${e.num}.jpg`;
+  });
+}
+
+function getSkin(e) {
+  console.log(e);
+  fetch(`https://ddragon.leagueoflegends.com/cdn/12.5.1/data/en_US/champion/${e}.json`).then((res) => res.json()).then((res) => res.data[e].skins)
+    .then((res) => createSkins(res, e));
+}
+
 function createItems(data) {
   data.forEach((champion) => {
     const boxItem = document.createElement('figure');
     const div = document.createElement('div');
+    div.addEventListener('click', () => {
+      getSkin(champion.name);
+    });
     boxItems.appendChild(div);
     div.appendChild(boxItem);
     const imgItem = document.createElement('img');
@@ -43,7 +63,6 @@ function createItems(data) {
     boxItem.appendChild(imgItem);
     boxItem.appendChild(nameChampion);
   });
-  console.log(data);
 }
 
 searchInput.addEventListener('input', () => {
