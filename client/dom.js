@@ -2,6 +2,9 @@ const btn = document.querySelector('.search');
 const searchInput = document.querySelector('.search-input');
 const boxItems = document.querySelector('.box-items');
 const skins = document.querySelector('.skins');
+const left = document.querySelector('.left');
+const right = document.querySelector('.right');
+let i = 0;
 
 fetch('/data')
   .then((res) => res.json())
@@ -34,10 +37,22 @@ btn.addEventListener('click', (e) => {
 });
 
 function createSkins(data, name) {
-  data.forEach((e) => {
-    const skin = document.createElement('img');
-    skins.appendChild(skin);
-    skin.src = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${name}_${e.num}.jpg`;
+  const imgSkin = document.querySelector('.img-skin');
+  imgSkin.src = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${name}_${data[i].num}.jpg`;
+
+  left.addEventListener('click', () => {
+    if (i >0) {
+      i -= 1;
+      imgSkin.src = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${name}_${data[i].num}.jpg`;
+    }
+  });
+
+  right.addEventListener('click', () => {
+    console.log(i);
+    if (i<data.length) {
+      i += 1;
+      imgSkin.src = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${name}_${data[i].num}.jpg`;
+    }
   });
 }
 
