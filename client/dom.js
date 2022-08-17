@@ -28,3 +28,21 @@ btn.addEventListener('click', (e) => {
             console.error('Error:', error);
         });
 })
+
+searchInput.addEventListener('input', (e) => {
+
+    fetch('/Inputsearch', {
+        method: 'POST', // or 'PUT'
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({name:searchInput.value}),
+
+        })
+        .then(res => res.json())
+        .then((data) => {
+        console.log(data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });})
