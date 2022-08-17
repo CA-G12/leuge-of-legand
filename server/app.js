@@ -15,10 +15,12 @@ app.use(
 app.use(router);
 
 app.use((req, res) => {
-  res.send('404');
-});
+  res.status(404).sendFile(path.join(__dirname, '..', 'client', 'error404.html'));
+ }
+);
+
 app.use((err, req, res, next) => {
-  res.send('500');
+  res.status(500).sendFile(path.join(__dirname, '..', 'client', 'error500.html'));
   next();
 });
 
