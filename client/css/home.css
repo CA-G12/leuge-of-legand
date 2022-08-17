@@ -9,7 +9,7 @@ header {
 
 }
 
-body{
+body {
   color: white
 }
 
@@ -31,7 +31,46 @@ input {
 
 main {
   margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
 }
+
+.skins img {
+  width: 300px;
+  border-radius: 12px;
+  height: 400px;
+}
+
+.skins {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+}
+
+.box-btns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70vh;
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.box-btns i {
+  font-size: 30px;
+  color: #102020;
+  background-color: gold;
+  border-radius: 50%;
+}
+
+.skins-contiuner {
+  position: relative;
+  width: 50%;
+}
+
 
 .box-items {
   display: flex;
