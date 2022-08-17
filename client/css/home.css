@@ -46,6 +46,7 @@ main {
 .skins {
   display: flex;
   justify-content: center;
+  align-items: center;
 
   width: 100%;
 }
@@ -102,6 +103,13 @@ main {
   overflow: hidden;
   text-align: center;
   font-size: 15px;
+}
+ i {
+  cursor: pointer;
+
+}
+i:hover {
+  transform: scale(1.2);
 }
 
 ::-webkit-scrollbar {

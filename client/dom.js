@@ -3,7 +3,7 @@ const searchInput = document.querySelector('.search-input');
 const boxItems = document.querySelector('.box-items');
 const left = document.querySelector('.left');
 const right = document.querySelector('.right');
-const dataList = document.querySelector('.dataList');
+const dataList = document.querySelector('#dataList');
 
 let i = 0;
 
@@ -100,8 +100,8 @@ function createItems(data) {
 
 function createOptions(data) {
   data.forEach((e) => {
-    const option = document.createElement('h3');
-    option.textContent = e;
+    const option = document.createElement('option');
+    option.value = e;
     dataList.appendChild(option);
     option.addEventListener('click', () => {
       searchInput.value = e;
