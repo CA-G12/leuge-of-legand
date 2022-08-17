@@ -6,18 +6,8 @@ const home = (req,res) => {
     res.sendFile(path.join(__dirname,"..","..","client","html","home.html"));
 }
 
-const getData = async(req,res)=>{
-
-try{
-    const response = await fetch(`https://ddragon.leagueoflegends.com/cdn/12.5.1/data/en_US/champion/${req.body.name}.json`)
-    const body = await response.json();
-        res.json(body)
-}catch(err){
-console.log(err);
-}
-    
-  
-    
+const getData = (req,res)=>{
+    fetch(`https://ddragon.leagueoflegends.com/cdn/12.5.1/data/en_US/champion/${req.body.name}.json`).then(rese=>rese.json()).then(rese=>res.json(rese)).catch(err=>res.json({"massage":"no resalt"}))
 
     }
 
