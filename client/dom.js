@@ -31,6 +31,7 @@ btn.addEventListener('click', (e) => {
         });
 })
 
+
 function createItems(data) {
     data.forEach(champion => {
         const boxItem=document.createElement('figure')
@@ -44,13 +45,27 @@ function createItems(data) {
         boxItem.appendChild(imgItem)
         boxItem.appendChild(nameChampion)
 
-        
-
-
-
-
-
+     
     });
     console.log(data);
     
 }
+
+searchInput.addEventListener('input', (e) => {
+
+    fetch('/Inputsearch', {
+        method: 'POST', // or 'PUT'
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({name:searchInput.value}),
+
+        })
+        .then(res => res.json())
+        .then((data) => {
+        console.log(data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });})
+
