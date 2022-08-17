@@ -84,6 +84,7 @@ function createItems(data) {
     const boxItem = document.createElement('figure');
     const div = document.createElement('div');
     div.addEventListener('click', () => {
+      i = 0;
       getSkin(champion.name);
     });
     boxItems.appendChild(div);
