@@ -130,3 +130,50 @@ i:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: #d9a64e;
 }
+
+/*-------------------------*/
+
+@media screen and (max-width: 768px) {
+  input {
+    width: 200px;
+  }
+
+  main {
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+  }
+
+  .box-items {
+    width: 90%;
+  }
+
+  .closeBtn {
+    display: block !important;
+    position: fixed;
+    right: 25px;
+    z-index: 10;
+  }
+
+  .skins-contiuner {
+    display: none;
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.856);
+    width: 90%;
+    height: 70vh;
+  }
+
+  .skins-contiuner img {
+    height: 100%;
+  }
+
+}
+
+figure:hover {
+  transform: scale(1.2);
+}
+
+.closeBtn {
+  display: none;
+}

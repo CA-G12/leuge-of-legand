@@ -4,6 +4,8 @@ const boxItems = document.querySelector('.box-items');
 const left = document.querySelector('.left');
 const right = document.querySelector('.right');
 const dataList = document.querySelector('#dataList');
+const contSkin=document.querySelector('.skins-contiuner ')
+const closeBtn =document.querySelector('.closeBtn')
 
 let i = 0;
 
@@ -84,8 +86,13 @@ function createItems(data) {
     const boxItem = document.createElement('figure');
     const div = document.createElement('div');
     div.addEventListener('click', () => {
+      contSkin.style.display='block'
       i = 0;
       getSkin(champion.name);
+    });
+    closeBtn.addEventListener('click',()=>{
+      console.log(11);
+      contSkin.style.display='none'
     });
     boxItems.appendChild(div);
     div.appendChild(boxItem);
