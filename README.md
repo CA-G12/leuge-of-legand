@@ -1,18 +1,10 @@
 # leuge_of_legand_PROJECT
 ## Week_5_Express
 
-### description
-
-...
 
 ### Links
 
-- GitHub ...
 - Herokue ...
-
-### User Story
-
-...
 
 ### How To clone Our App:
 
